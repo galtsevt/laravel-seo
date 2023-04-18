@@ -1,0 +1,27 @@
+{
+    "name": "galtsevt/laravel-seo",
+    "description": "description",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Galtsev Timofey",
+            "email": "galtsev.t@yandex.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Galtsevt\\Seo\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Galtsevt\\Seo\\Providers\\SeoServiceProvider"
+            ]
+        }
+    }
+}
