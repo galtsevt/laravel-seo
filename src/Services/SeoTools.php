@@ -22,7 +22,7 @@ class SeoTools
         return $this->breadcrumbs;
     }
 
-    public function medaData(): MetaData
+    public function metaData(): MetaData
     {
         return $this->metaData;
     }

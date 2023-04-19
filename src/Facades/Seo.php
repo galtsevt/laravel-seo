@@ -5,8 +5,8 @@ namespace Galtsevt\LaravelSeo\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static \Galtsevt\LaravelSeo\Services\SeoTools breadcrumbs()
- * @method static \Galtsevt\LaravelSeo\Services\SeoTools metaData()
+ * @method static \Galtsevt\LaravelSeo\Services\Breadcrumbs\BreadcrumbsContainer breadcrumbs()
+ * @method static \Galtsevt\LaravelSeo\Services\Metadata\MetaData metaData()
  *
  * @see \Galtsevt\LaravelSeo\Services\SeoTools
  *

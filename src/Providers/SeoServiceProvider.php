@@ -1,6 +1,7 @@
 <?php
 namespace Galtsevt\LaravelSeo\Providers;
 
+use Galtsevt\LaravelSeo\Services\SeoTools;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +14,7 @@ class SeoServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('app.seo.tools', fn() => new SeoTools());
     }
 
     /**

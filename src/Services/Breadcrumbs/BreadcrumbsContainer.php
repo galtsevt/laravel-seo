@@ -6,7 +6,7 @@ class BreadcrumbsContainer
 {
     protected array $breadcrumbs = [];
 
-    public function add(string $name, string $url): void
+    public function add(string $name, string $url = null): void
     {
         $this->breadcrumbs[] = new Breadcrumb($name, $url);
     }
