@@ -8,7 +8,7 @@
                         @if($loop->last)
                             {{ $item->getName() }}
                         @else
-                            <a href="{{ $item->getLink() }}">{{ $item->getName() }}</a>
+                            <a href="{{ $item->getUrl() }}">{{ $item->getName() }}</a>
                         @endif
                     </li>
                 @endforeach
