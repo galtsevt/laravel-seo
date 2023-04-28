@@ -21,8 +21,8 @@ return new class extends Migration
             $table->boolean('site_map')->nullable();
             $table->string('changefreq')->nullable();
             $table->string('priority')->nullable();
-            $table->string('model');
-            $table->unsignedBigInteger('foreign_id')->index()->nullable();
+            $table->string('model_type');
+            $table->unsignedBigInteger('model_id')->index();
             $table->timestamps();
         });
     }

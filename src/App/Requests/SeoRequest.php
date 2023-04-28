@@ -1,6 +1,6 @@
 <?php
 
-namespace Galtsevt\LaravelSeo\Requests;
+namespace Galtsevt\LaravelSeo\App\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -27,7 +27,7 @@ class SeoRequest extends FormRequest
            'seo.title' => 'string|nullable|max:200',
            'seo.keywords' => 'string|nullable|max:250',
            'seo.description' => 'string|nullable|max:400',
-           'seo.site_map' => 'integer|nullable|in:0,1',
+           'seo.site_map' => 'boolean|nullable',
            'seo.changefreq' => 'required_with:site_map|string|nullable|max:40',
            'seo.priority' => 'required_with:site_map|numeric|nullable|max:40',
         ];

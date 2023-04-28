@@ -1,6 +1,6 @@
 <?php
 
-namespace Galtsevt\LaravelSeo\Components;
+namespace Galtsevt\LaravelSeo\App\View\Components;
 
 use Illuminate\View\Component;
 

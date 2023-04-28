@@ -1,6 +1,6 @@
 <?php
 
-namespace Galtsevt\LaravelSeo\Services\Metadata;
+namespace Galtsevt\LaravelSeo\App\Services\Metadata;
 
 class MetaData
 {

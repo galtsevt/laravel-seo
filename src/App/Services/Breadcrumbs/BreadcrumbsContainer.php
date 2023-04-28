@@ -1,6 +1,6 @@
 <?php
 
-namespace Galtsevt\LaravelSeo\Services\Breadcrumbs;
+namespace Galtsevt\LaravelSeo\App\Services\Breadcrumbs;
 
 class BreadcrumbsContainer
 {

@@ -1,10 +1,9 @@
 <?php
 
-namespace Galtsevt\LaravelSeo\Services;
+namespace Galtsevt\LaravelSeo\App\Services;
 
-use Galtsevt\LaravelSeo\Interfaces\SeoInterface;
-use Galtsevt\LaravelSeo\Models\Seo;
-use Galtsevt\LaravelSeo\Requests\SeoRequest;
+use Galtsevt\LaravelSeo\App\Models\Seo;
+use Galtsevt\LaravelSeo\App\Requests\SeoRequest;
 use Illuminate\Database\Eloquent\Model;
 
 class SeoService
@@ -16,14 +15,14 @@ class SeoService
         $this->request = app(SeoRequest::class);
     }
 
-    public function saveData(SeoInterface $model): void
+    public function saveData(Model $model): void
     {
         $data = $this->request->validated();
         if (isset($data['seo'])) {
             $data['seo']['site_map'] = $data['seo']['site_map'] ?? 0;
             $search = [
-                'model' => get_class($model),
-                'foreign_id' => $model->id,
+                'model_type' => get_class($model),
+                'model_id' => $model->id,
             ];
             $data = array_merge($search, $data['seo']);
             $model->seo()->updateOrCreate($search, $data);

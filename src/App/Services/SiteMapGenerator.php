@@ -1,6 +1,6 @@
 <?php
 
-namespace Galtsevt\LaravelSeo\Services;
+namespace Galtsevt\LaravelSeo\App\Services;
 
 use DOMDocument;
 use DOMException;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Galtsevt\LaravelSeo\Models;
+namespace Galtsevt\LaravelSeo\App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,8 +15,9 @@ class Seo extends Model
         'site_map' => 'boolean',
     ];
 
-    public function relatedModel(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function relatedModel(): \Illuminate\Database\Eloquent\Relations\MorphTo
     {
-        return $this->belongsTo($this->model, 'foreign_id', 'id');
+        return $this->morphTo('model');
     }
+
 }

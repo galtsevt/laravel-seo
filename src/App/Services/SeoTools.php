@@ -1,9 +1,9 @@
 <?php
 
-namespace Galtsevt\LaravelSeo\Services;
+namespace Galtsevt\LaravelSeo\App\Services;
 
-use Galtsevt\LaravelSeo\Services\Breadcrumbs\BreadcrumbsContainer;
-use Galtsevt\LaravelSeo\Services\Metadata\MetaData;
+use Galtsevt\LaravelSeo\App\Services\Breadcrumbs\BreadcrumbsContainer;
+use Galtsevt\LaravelSeo\App\Services\Metadata\MetaData;
 
 class SeoTools
 {

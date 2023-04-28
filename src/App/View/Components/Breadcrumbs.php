@@ -1,9 +1,9 @@
 <?php
 
-namespace Galtsevt\LaravelSeo\Components;
+namespace Galtsevt\LaravelSeo\App\View\Components;
 
 use Closure;
-use Galtsevt\LaravelSeo\Facades\Seo;
+use Galtsevt\LaravelSeo\App\Facades\Seo;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
