@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('changefreq')->nullable();
             $table->string('priority')->nullable();
             $table->string('model_type');
-            $table->unsignedBigInteger('model_id')->index();
+            $table->unsignedBigInteger('model_id');
+            $table->index(['model_type', 'model_id']);
             $table->timestamps();
         });
     }
