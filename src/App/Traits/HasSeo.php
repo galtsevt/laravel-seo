@@ -4,6 +4,7 @@ namespace Galtsevt\LaravelSeo\App\Traits;
 
 use Galtsevt\LaravelSeo\App\Models\Seo;
 use Galtsevt\LaravelSeo\App\Services\SeoService;
+use Illuminate\Database\Eloquent\Model;
 
 trait HasSeo
 {
@@ -16,5 +17,12 @@ trait HasSeo
     {
         $seoService = new SeoService();
         $seoService->saveData($this);
+    }
+
+    protected static function bootHasSeo(): void
+    {
+        static::saved(function (Model $model) {
+            $model->loadSeoFromRequest();
+        });
     }
 }
