@@ -5,7 +5,7 @@
                 <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Главная</a></li>
                 @foreach($breadcrumbs as $item)
                     <li class="breadcrumb-item">
-                        @if($loop->last)
+                        @if($loop->last or is_numeric($item->getUrl()))
                             {{ $item->getName() }}
                         @else
                             <a href="{{ $item->getUrl() }}">{{ $item->getName() }}</a>
