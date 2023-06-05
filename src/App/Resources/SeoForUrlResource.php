@@ -5,7 +5,7 @@ namespace Galtsevt\LaravelSeo\App\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class SeoResource extends JsonResource
+class SeoForUrlResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,12 +16,8 @@ class SeoResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
-            'description' => $this->description,
-            'keywords' => $this->keywords,
-            'site_map' => $this->site_map,
-            'changefreq' => $this->changefreq,
-            'priority' => $this->priority,
+            'url' => $this->url,
+            'seo' => new SeoResource($this->seo),
         ];
     }
 }

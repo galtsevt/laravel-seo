@@ -18,7 +18,7 @@ class Breadcrumb
      */
     public function getUrl(): ?string
     {
-        return $this->url;
+        return $this->url == 0 ? null:$this->url;
     }
 
     /**

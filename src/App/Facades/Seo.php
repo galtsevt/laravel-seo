@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static \Galtsevt\LaravelSeo\App\Services\Breadcrumbs\BreadcrumbsContainer breadcrumbs()
  * @method static \Galtsevt\LaravelSeo\App\Services\Metadata\MetaData metaData()
+ * @method static \Galtsevt\LaravelSeo\App\Services\Metadata\TemplateSeoContainer template()
  *
  * @see \Galtsevt\LaravelSeo\App\Services\SeoTools
  *

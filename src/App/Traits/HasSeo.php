@@ -24,5 +24,8 @@ trait HasSeo
         static::saved(function (Model $model) {
             $model->loadSeoFromRequest();
         });
+        static::deleting(function (Model $model) {
+            $model->seo()->delete();
+        });
     }
 }
