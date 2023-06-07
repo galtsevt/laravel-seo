@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Galtsevt\\Seo\\Providers\\SeoServiceProvider"
+                "Galtsevt\\Seo\\App\\Providers\\SeoServiceProvider"
             ]
         }
     }
