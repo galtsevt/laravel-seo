@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class MetaData
 {
     protected ?string $title = null;
-    protected Seo $seo;
+    protected ?Seo $seo;
+    protected ?Model $model = null;
 
     public function setTitle(string $title): static
     {
@@ -31,13 +32,39 @@ class MetaData
         return $this->seo?->description ?? null;
     }
 
-    public function prepare(Model|array $seo): static
+    public function prepare(Model|array|null $seo): static
     {
         if (is_array($seo)) {
             $this->seo = new Seo($seo);
         } else {
+            $this->model = $seo;
             $this->seo = $seo->seo;
         }
         return $this;
+    }
+
+    public function withTemplate(): void
+    {
+        if (!$this->seo && $this->model) {
+            if ($seo = Seo::query()->where('model_type', get_class($this->model))->first()) {
+                $this->seo = $seo;
+                $seo->title = $this->addAttributes($seo->title);
+                $seo->keywords = $this->addAttributes($seo->keywords);
+                $seo->description = $this->addAttributes($seo->description);
+            }
+        }
+    }
+
+    private function addAttributes(string $template): string
+    {
+        $model = $this->model;
+        return preg_replace_callback('~(\{[a-z]+\})~ui', function ($matches) use ($model) {
+            $match = str_replace(['{', '}'], '', $matches[0]);
+            try {
+                return $model->$match ?? null;
+            } catch (\Exception $ex) {
+                return 'undefined';
+            }
+        }, $template);
     }
 }

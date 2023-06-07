@@ -11,5 +11,7 @@ Route::group(['middleware' => ['web', 'dashboard', 'module:seo'], 'prefix' => 'a
     Route::delete('/delete/{urlSeo}', [UrlSeoController::class, 'destroy'])->name('admin.url_seo.delete');
     Route::group(['prefix' => 'template'], function () {
         Route::get('/', [TemplateSeoController::class, 'index'])->name('admin.seo.template.index');
+        Route::post('/updateOrCreate', [TemplateSeoController::class, 'updateOrCreate'])->name('admin.seo.template.updateOrCreate');
+        Route::delete('/delete/{seo}', [TemplateSeoController::class, 'destroy'])->name('admin.seo.template.delete');
     });
 });

@@ -16,7 +16,7 @@ class TemplateSeoResource extends JsonResource
     {
         return [
             'name' => $this->getName(),
-            'model' => $this->getModel(),
+            'model_type' => $this->getModel(),
             'seo' => new SeoResource($this->getSeo()),
         ];
     }
