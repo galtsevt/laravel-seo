@@ -20,7 +20,7 @@ class UrlSeoController
     {
         Seo::metaData()->setTitle('SEO');
 
-        return Template::render('Modules/Seo/Index', [
+        return inertia('Modules/Seo/Index', [
             'urls' => SeoForUrlResource::collection(SeoForUrl::query()->paginate(20)),
         ]);
     }

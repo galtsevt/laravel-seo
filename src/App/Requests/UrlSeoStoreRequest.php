@@ -27,14 +27,7 @@ class UrlSeoStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'url' => ['unique:url_seo,url', 'string', 'required', 'max:200',
-                function (string $attribute, mixed $value, Closure $fail) {
-                    $response = Http::get(Request::getHttpHost() . $value);
-                    if (!$response->ok()) {
-                        $fail("URL не найден");
-                    }
-                }
-            ],
+            'url' => ['unique:url_seo,url', 'string', 'required', 'max:200'],
         ];
     }
 }

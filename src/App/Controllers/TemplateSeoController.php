@@ -22,7 +22,7 @@ class TemplateSeoController extends \App\Http\Controllers\Controller
     {
         Seo::metaData()->setTitle('Шаблонные SEO теги');
 
-        return Template::render('Modules/Seo/Template/Index', [
+        return inertia('Modules/Seo/Template/Index', [
             'templates' => TemplateSeoResource::collection(Seo::template()->getAll()),
         ]);
     }

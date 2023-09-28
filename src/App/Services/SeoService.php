@@ -18,6 +18,7 @@ class SeoService
     public function saveData(Model $model): void
     {
         $data = $this->request->validated();
+
         if (isset($data['seo'])) {
             $data['seo']['site_map'] = $data['seo']['site_map'] ?? 0;
             $search = [
@@ -29,12 +30,4 @@ class SeoService
         }
     }
 
-    public function makeSitemap(SiteMapGenerator $siteMapGenerator): void
-    {
-        $pages = Seo::query()->where('site_map', 1)->get();
-        foreach ($pages as $page) {
-            $siteMapGenerator->add($page->relatedModel->getUrl(), $page->relatedModel->getDate(), $page->priority, $page->changefreq);
-        }
-        $siteMapGenerator->saveToFile(public_path('sitemap.xml'));
-    }
 }

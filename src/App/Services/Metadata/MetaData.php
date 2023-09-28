@@ -38,8 +38,11 @@ class MetaData
             $this->seo = new Seo($seo);
         } else {
             $this->model = $seo;
-            $this->seo = $seo->seo;
+            if ($seo) {
+                $this->seo = $seo->seo;
+            }
         }
+
         return $this;
     }
 

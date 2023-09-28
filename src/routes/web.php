@@ -15,3 +15,7 @@ Route::group(['middleware' => ['web', 'dashboard', 'module:seo'], 'prefix' => 'a
         Route::delete('/delete/{seo}', [TemplateSeoController::class, 'destroy'])->name('admin.seo.template.delete');
     });
 });
+
+Route::group(['middleware' => ['module:seo']], function () {
+    Route::get('/sitemap.xml', [\Galtsevt\LaravelSeo\App\Controllers\SitemapController::class, 'index']);
+});
